@@ -96,9 +96,13 @@ This repository contains an automation framework built using [Playwright](https:
      ```
 
 3. **Run Tests for a Specific Environment**:
-   - Use the `--grep` flag to filter tests by environment tag:
+   - For PowerShell:
      ```bash
-     ENV=qa npx playwright test
+     $env:ENV="qa"; npx playwright test
+     ```
+   - For Command for Windows CMD:
+     ```bash
+     set ENV=qa && npx playwright test
      ```
 
 4. **Generate Reports**:
