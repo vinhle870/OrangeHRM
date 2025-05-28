@@ -6,32 +6,32 @@ This repository contains an automation framework built using [Playwright](https:
 
 ## Framework Structure and Rationale
 
-### Directory Structure
-.
-├── .github/                 # GitHub Actions workflows
-│   └── workflows/
-├── node_modules/           # Node dependencies (auto-generated)
-├── playwright-report/      # Playwright HTML reports
-├── profile/                # Environment-specific files for local execution with the "env.env_name"
-│   ├── .env.qa
-├── src/                    # Source code for automation framework
-│   ├── data-factory/       # Data creation logic used in the test classes
-│   ├── data-handling/      # Raw file reading & parsing
-│   ├── enum/               # Shared enums
-│   ├── fixtures/           # Shared test fixtures
-│   ├── locators/           # Page element locators
-│   ├── objects/            # Data objects and models
-│   ├── pages/              # Page Object Model implementations
-│   ├── test-data/          # Static test data
-│   │   └── apiData/
-│   └── utilities/          # Reusable utility functions
-├── test-results/           # Playwright JSON/JUnit results
-├── tests/                  # Test cases organized by domain
-│   ├── API/                # API test cases
-│   ├── UI/                 # UI test cases
-├── playwright.config.ts    # Playwright global configuration
-├── package.json            # NPM scripts and dependencies
-├── README.md               # Project documentation
+## 📁 Directory Structure
+<pre> ```.<pre> ```
+<pre> ```├── .github/                 # GitHub Actions workflows<pre> ```
+<pre> ```│   └── workflows/
+<pre> ```├── node_modules/           # Node dependencies (auto-generated) <pre> ```
+<pre> ```├── playwright-report/      # Playwright HTML reports
+<pre> ```├── profile/                # Environment-specific files for local execution with the "env.env_name"
+<pre> ```│   ├── .env.qa
+<pre> ```├── src/                    # Source code for automation framework <pre> ```
+<pre> ```│   ├── data-factory/       # Data creation logic used in the test classes <pre> ```
+<pre> ```│   ├── data-handling/      # Raw file reading & parsing <pre> ```
+<pre> ```│   ├── enum/               # Shared enums <pre> ```
+<pre> ```│   ├── fixtures/           # Shared test fixtures <pre> ```
+<pre> ```│   ├── locators/           # Page element locators <pre> ```
+<pre> ```│   ├── objects/            # Data objects and models <pre> ```
+<pre> ```│   ├── pages/              # Page Object Model implementations <pre> ```
+<pre> ```│   ├── test-data/          # Static test data <pre> ```
+<pre> ```│   │   └── apiData/
+<pre> ```│   └── utilities/          # Reusable utility functions <pre> ```
+<pre> ```├── test-results/           # Playwright JSON/JUnit results <pre> ```
+<pre> ```├── tests/                  # Test cases organized by domain <pre> ```
+<pre> ```│   ├── API/                # API test cases <pre> ```
+<pre> ```│   ├── UI/                 # UI test cases <pre> ```
+<pre> ```├── playwright.config.ts    # Playwright global configuration <pre> ```
+<pre> ```├── package.json            # NPM scripts and dependencies <pre> ```
+<pre> ```├── README.md               # Project documentation <pre> ```
 
 
 ### Key Features
