@@ -7,7 +7,31 @@ This repository contains an automation framework built using [Playwright](https:
 ## Framework Structure and Rationale
 
 ### Directory Structure
-. ├── tests/ # Contains all test scripts │ ├── demo/ # Demo test scripts │ ├── utils/ # Utility functions and helpers │ └── fixtures/ # Test data and fixtures ├── configs/ # Configuration files for different environments │ ├── qa.config.ts # QA environment configuration │ ├── uat.config.ts # UAT environment configuration │ └── staging.config.ts # Staging environment configuration ├── playwright.config.ts # Global Playwright configuration ├── .github/ │ └── workflows/ │ └── playwright.yml # GitHub Actions workflow for CI/CD ├── package.json # Node.js dependencies and scripts ├── README.md # Documentation └── playwright-report/ # Test reports generated after execution
+.
+├── .github/                 # GitHub Actions workflows
+│   └── workflows/
+├── node_modules/           # Node dependencies (auto-generated)
+├── playwright-report/      # Playwright HTML reports
+├── profile/                # Environment-specific files for local execution with the "env.env_name"
+│   ├── .env.qa
+├── src/                    # Source code for automation framework
+│   ├── data-factory/       # Data creation logic used in the test classes
+│   ├── data-handling/      # Raw file reading & parsing
+│   ├── enum/               # Shared enums
+│   ├── fixtures/           # Shared test fixtures
+│   ├── locators/           # Page element locators
+│   ├── objects/            # Data objects and models
+│   ├── pages/              # Page Object Model implementations
+│   ├── test-data/          # Static test data
+│   │   └── apiData/
+│   └── utilities/          # Reusable utility functions
+├── test-results/           # Playwright JSON/JUnit results
+├── tests/                  # Test cases organized by domain
+│   ├── API/                # API test cases
+│   ├── UI/                 # UI test cases
+├── playwright.config.ts    # Playwright global configuration
+├── package.json            # NPM scripts and dependencies
+├── README.md               # Project documentation
 
 
 ### Key Features
@@ -50,7 +74,7 @@ This repository contains an automation framework built using [Playwright](https:
      ```
 
 4. **Set Environment Variables**:
-   - Ensure the following environment variables are set for your environment:
+   - Ensure the following environment variables are set for your environment in the /profile/.env.<env_name> (for local execution) OR GitHub Environment Variable Configuration (for cidcd execution):
      - `BASE_URL`
      - `ADMIN_USERNAME`
      - `ADMIN_PASSWORD`

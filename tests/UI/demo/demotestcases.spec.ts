@@ -1,7 +1,7 @@
-import { test } from '../src/fixtures/basetest-fixtures' ;
+import { test } from '../../../src/fixtures/basetest-fixtures' ;
 import fs from 'fs';
 import path from 'path';
-import { DataFactory } from '../src/data-factory/datafactory';
+import { DataFactory } from '../../../src/data-factory/datafactory';
 
 
 test.describe('Test Login With Valid Creteria and Search Menu Function', () => {
