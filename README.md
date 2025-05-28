@@ -98,7 +98,7 @@ This repository contains an automation framework built using [Playwright](https:
 3. **Run Tests for a Specific Environment**:
    - Use the `--grep` flag to filter tests by environment tag:
      ```bash
-     npx playwright test --grep @qa
+     ENV=qa npx playwright test
      ```
 
 4. **Generate Reports**:
