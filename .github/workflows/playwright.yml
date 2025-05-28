@@ -4,13 +4,22 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'The environment to deploy to (e.g., qa, uat, staging)'
+        description: 'The environment to execute (e.g., qa, uat, staging)'
         required: true
         type: choice
         options:
           - qa
           - uat
           - staging
+      browser:
+        description: 'The browser to execute tests on (e.g., chromium, firefox, webkit)'
+        required: true
+        type: choice
+        options:
+          - all
+          - chromium
+          - firefox
+          - webkit
 
 jobs:
   test:
@@ -52,7 +61,31 @@ jobs:
         BASE_URL: ${{ env.BASE_URL }}
         ADMIN_USERNAME: ${{ env.ADMIN_USERNAME }}
         ADMIN_PASSWORD: ${{ env.ADMIN_PASSWORD }}
-      run: npx playwright test
+      run: |
+        echo "Running Playwright tests for environment: ${{ github.event.inputs.environment }}"
+        echo "Selected browser: ${{ github.event.inputs.browser }}"
+
+        if [ "${{ github.event.inputs.browser }}" == "all" ]; then
+          if [ "${{ github.event.inputs.environment }}" == "qa" ]; then
+            npx playwright test --project=chromium --project=firefox --project=webkit --grep @qa
+          elif [ "${{ github.event.inputs.environment }}" == "uat" ]; then
+            npx playwright test --project=chromium --project=firefox --project=webkit --grep @uat
+          elif [ "${{ github.event.inputs.environment }}" == "staging" ]; then
+            npx playwright test --project=chromium --project=firefox --project=webkit --grep @staging
+          else
+            echo "Invalid environment selected"
+            exit 1
+          fi
+        elif [ "${{ github.event.inputs.browser }}" == "chromium" ]; then
+          npx playwright test --project=chromium
+        elif [ "${{ github.event.inputs.browser }}" == "firefox" ]; then
+          npx playwright test --project=firefox
+        elif [ "${{ github.event.inputs.browser }}" == "webkit" ]; then
+          npx playwright test --project=webkit
+        else
+          echo "Invalid browser option selected"
+          exit 1
+        fi
 
     - name: Upload Playwright report
       if: ${{ success() && !cancelled() }}
