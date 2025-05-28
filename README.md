@@ -41,14 +41,14 @@ This repository contains an automation framework built using [Playwright](https:
    - Configurable for different environments: QA, UAT, and Staging.
 
 2. **Environment-Specific Configurations**:
-   - Each environment has its own configuration file (`qa.config.ts`, `uat.config.ts`, etc.) to manage environment-specific settings like `BASE_URL`.
+   - Each environment has its own configuration file (`env.qa`, `env.uat`, etc.) to manage environment-specific settings like `BASE_URL`.
 
 3. **GitHub Actions Workflow**:
    - Automates test execution with the `playwright.yml` workflow.
    - Allows manual triggering with `workflow_dispatch` inputs for environment and browser selection.
 
-4. **Tag-Based Test Execution**:
-   - Tests can be filtered using tags (e.g., `@qa`, `@uat`, `@staging`) to run environment-specific scenarios.
+4. **Cross Browser Test Execution**:
+   - Tests can be run on cross browser parallely.
 
 5. **Reporting**:
    - Generates detailed test reports in the `playwright-report/` directory.
