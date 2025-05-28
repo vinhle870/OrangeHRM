@@ -7,7 +7,7 @@ This repository contains an automation framework built using [Playwright](https:
 ## Framework Structure and Rationale
 
 ## 📁 Directory Structure
-.
+<pre>.
 ├── .github/                 # GitHub Actions workflows
 │   └── workflows/
 ├── node_modules/            # Node dependencies (auto-generated)
@@ -32,6 +32,7 @@ This repository contains an automation framework built using [Playwright](https:
 ├── playwright.config.ts     # Playwright global configuration
 ├── package.json             # NPM scripts and dependencies
 └── README.md                # Project documentation
+</pre>
 
 
 ### Key Features
