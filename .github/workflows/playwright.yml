@@ -18,10 +18,6 @@ jobs:
   test:
     timeout-minutes: 60
     environment: ${{ github.event.inputs.environment }}
-    env:
-        BASE_URL: ${{ secrets.BASE_URL }}
-        ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
-        ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -35,10 +31,10 @@ jobs:
         ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
         ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
       run: |
-          echo "Execute Environment: ${{ github.event.inputs.environment }}"
-          echo "BASE_URL=${{env.BASE_URL}}"
-          echo "ADMIN_USERNAME=${{env.ADMIN_USERNAME}}"
-          echo "ADMIN_PASSWORD=${{env.ADMIN_PASSWORD}}"
+        echo "Execute Environment: ${{ github.event.inputs.environment }}"
+        echo "BASE_URL=${{ secrets.BASE_URL }}" >> $GITHUB_ENV
+        echo "ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}" >> $GITHUB_ENV
+        echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> $GITHUB_ENV
 
     - name: Run Playwright tests
       if: ${{ env.BASE_URL && env.BASE_URL != '' }}
