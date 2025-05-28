@@ -29,9 +29,9 @@ jobs:
 
     - name: Set environment variables
       env:
-        BASE_URL: ${{ vars.BASE_URL }}
-        ADMIN_USERNAME: ${{ vars.ADMIN_USERNAME }}
-        ADMIN_PASSWORD: ${{ vars.ADMIN_PASSWORD }}
+        BASE_URL: ${{ secrets.BASE_URL }}
+        ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+        ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
       run: |
         echo "Execute Environment: ${{ github.event.inputs.environment }}"
         echo "BASE_URL=${BASE_URL}"
