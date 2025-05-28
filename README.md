@@ -7,7 +7,31 @@ This repository contains an automation framework built using [Playwright](https:
 ## Framework Structure and Rationale
 
 ## 📁 Directory Structure
-<pre> ```text . ├── .github/ # GitHub Actions workflows │ └── workflows/ ├── node_modules/ # Node dependencies (auto-generated) ├── playwright-report/ # Playwright HTML reports ├── profile/ # Environment-specific files for local execution with the "env.env_name" │ ├── .env.qa ├── src/ # Source code for automation framework │ ├── data-factory/ # Data creation logic used in the test classes │ ├── data-handling/ # Raw file reading & parsing │ ├── enum/ # Shared enums │ ├── fixtures/ # Shared test fixtures │ ├── locators/ # Page element locators │ ├── objects/ # Data objects and models │ ├── pages/ # Page Object Model implementations │ ├── test-data/ # Static test data │ │ └── apiData/ │ └── utilities/ # Reusable utility functions ├── test-results/ # Playwright JSON/JUnit results ├── tests/ # Test cases organized by domain │ ├── API/ # API test cases │ └── UI/ # UI test cases ├── playwright.config.ts # Playwright global configuration ├── package.json # NPM scripts and dependencies └── README.md # Project documentation ``` </pre>
+.
+├── .github/                 # GitHub Actions workflows
+│   └── workflows/
+├── node_modules/            # Node dependencies (auto-generated)
+├── playwright-report/       # Playwright HTML reports
+├── profile/                 # Environment-specific files for local execution with the "env.env_name"
+│   └── .env.qa
+├── src/                     # Source code for automation framework
+│   ├── data-factory/        # Data creation logic used in the test classes
+│   ├── data-handling/       # Raw file reading & parsing
+│   ├── enum/                # Shared enums
+│   ├── fixtures/            # Shared test fixtures
+│   ├── locators/            # Page element locators
+│   ├── objects/             # Data objects and models
+│   ├── pages/               # Page Object Model implementations
+│   ├── test-data/           # Static test data
+│   │   └── apiData/
+│   └── utilities/           # Reusable utility functions
+├── test-results/            # Playwright JSON/JUnit results
+├── tests/                   # Test cases organized by domain
+│   ├── API/                 # API test cases
+│   └── UI/                  # UI test cases
+├── playwright.config.ts     # Playwright global configuration
+├── package.json             # NPM scripts and dependencies
+└── README.md                # Project documentation
 
 
 ### Key Features
